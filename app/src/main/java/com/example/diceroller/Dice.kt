@@ -5,18 +5,18 @@ import android.graphics.drawable.Drawable
 import androidx.core.content.res.ResourcesCompat
 
 class Dice(private val numFaces: Int, private val res : Resources) {
-    private fun getDice(num : Int) : Drawable?{
-        when(num)
-        {
-            1 -> return ResourcesCompat.getDrawable(res, R.drawable.dice_six_faces_one, null)
-            2 -> return ResourcesCompat.getDrawable(res, R.drawable.dice_six_faces_two, null)
-            3 -> return ResourcesCompat.getDrawable(res, R.drawable.dice_six_faces_three, null)
-            4 -> return ResourcesCompat.getDrawable(res, R.drawable.dice_six_faces_four, null)
-            5 -> return ResourcesCompat.getDrawable(res, R.drawable.dice_six_faces_five, null)
+    private fun getDrawableId(num : Int) : Int{
+        val id = when(num){
+            1 -> R.drawable.dice_six_faces_one
+            2 -> R.drawable.dice_six_faces_two
+            3 -> R.drawable.dice_six_faces_three
+            4 -> R.drawable.dice_six_faces_four
+            5 -> R.drawable.dice_six_faces_five
+            else -> R.drawable.dice_six_faces_six
         }
-        return ResourcesCompat.getDrawable(res, R.drawable.dice_six_faces_six, null)
+        return id
     }
     fun roll(): Drawable? {
-        return getDice((1..numFaces).random())
+        return ResourcesCompat.getDrawable(res, getDrawableId((1..numFaces).random()), null)
     }
 }
