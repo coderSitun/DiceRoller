@@ -13,6 +13,9 @@ class MainActivity : AppCompatActivity() {
 
         val rollButton: Button = findViewById(R.id.button)
         rollButton.setOnClickListener { rollDice() }
+
+        //Default View
+        rollDice()
     }
 
     private fun rollDice() {
