@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +18,6 @@ class MainActivity : AppCompatActivity() {
     private fun rollDice() {
         //Update Dice Roll Result on screen
         val result: ImageView = findViewById(R.id.imageView)
-        result.setImageResource(R.drawable.dice_six_faces_two)
+        result.setImageDrawable(Dice(6, resources).roll())
     }
 }
