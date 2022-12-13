@@ -10,14 +10,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rollButton : Button = findViewById(R.id.button)
-        rollButton.setOnClickListener {
-            rollDice()
-        }
+        val rollButton: Button = findViewById(R.id.button)
+        rollButton.setOnClickListener { rollDice() }
     }
 
-    private fun rollDice(){
-        val result : TextView = findViewById(R.id.textView)
+    private fun rollDice() {
+        //Update Dice Roll Result on screen
+        val result: TextView = findViewById(R.id.textView)
         result.text = Dice(6).roll().toString()
     }
 }
