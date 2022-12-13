@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
     private fun rollDice() {
         //Update Dice Roll Result on screen
         val result: ImageView = findViewById(R.id.imageView)
-        result.setImageDrawable(Dice(6, resources).roll())
+        val dice = Dice(6, resources)
+        result.setImageDrawable(dice.roll())
+        result.contentDescription = dice.toString()
     }
 }
