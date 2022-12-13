@@ -3,7 +3,7 @@ package com.example.diceroller
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
+import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun rollDice() {
         //Update Dice Roll Result on screen
-        val result: TextView = findViewById(R.id.textView)
-        result.text = Dice(6).roll().toString()
+        val result: ImageView = findViewById(R.id.imageView)
+        result.setImageResource(R.drawable.dice_six_faces_two)
     }
 }
